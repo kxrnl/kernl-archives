@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 100%;
+}
+
+.sillyImage {
+    width: 200px;
+}
