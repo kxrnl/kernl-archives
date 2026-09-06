@@ -1,0 +1,36 @@
+.card {
+    background-color: #FAF9F6;
+    min-width: 200px;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    height: fit-content;
+}
+
+.gameimg {
+    width: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+    outline: 0;
+    display: block;
+}
+
+.title {
+    color: black;
+    font-size: 20px;
+}
+
+.date {
+    color: var(--secondary-color);
+}
+
+.card-content {
+    padding: 15px;
+    /* this is your (PADDING) between image and text */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

@@ -41,22 +41,17 @@
   max-width: 100%;
   min-width: 75%;
   margin: 0 auto;
-  text-align: center;
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
+  background-color: white;
 }
 
 body {
   margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  font-family: 'Inter';
+  user-select: none;
+  background-color: white;
+  height: fit-content;
 }
 
 h1 {
@@ -85,17 +80,6 @@ p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+img {
+  -webkit-user-drag: none;
 }

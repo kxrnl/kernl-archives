@@ -18,16 +18,24 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: -99;
+    z-index: 0;
 }
 
 .logo {
     width: 350px;
+    -webkit-user-drag: none;
+}
+
+.home-holder {
+    height: 100%;
+    display: grid;
+    align-content: center;
 }
 
 .center {
     place-items: center;
     margin: auto;
+    z-index: 1;
 }
 
 .center-menu {
@@ -42,11 +50,10 @@ body {
     padding: 5px;
     /* allows transform movement */
     text-decoration: none;
-    color: white;
     transition: transform 0.2s ease;
 }
 
 .center-menu>*:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     text-decoration: underline;
 }

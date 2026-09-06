@@ -11,21 +11,6 @@ html {
     scroll-behavior: smooth;
 }
 
-a {
-    text-decoration: none;
-}
-
-.popup {
-    opacity: 0;
-    transform: scale(0.6);
-    transition: opacity .15s ease, transform .15s ease;
-}
-
-.popup.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
 .topbar {
     z-index: 99;
     width: 100%;
@@ -57,7 +42,7 @@ div {
     padding: 0;
 }
 
-p {
+.center-menu p {
     margin: 0;
     padding: 0;
     color: white
@@ -73,13 +58,13 @@ p {
     position: fixed;
     height: 60px;
     align-items: center;
-
+    padding: 0px 20px;
     font-size: 13px;
 }
 
 
 /* LOADER */
-#loader {
+.loader {
     position: fixed;
     inset: 0;
     background: #ffffff;
@@ -87,10 +72,10 @@ p {
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 1s ease, visibility 1s ease;
 }
 
-#loader.hide {
+.loader.hide {
     opacity: 0;
     visibility: hidden;
 }

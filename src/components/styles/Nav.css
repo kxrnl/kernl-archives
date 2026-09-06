@@ -1,0 +1,19 @@
+/* Animations */
+.popup {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity .15s ease, transform .15s ease;
+}
+
+.top-logo-holder {
+    width: max-content;
+}
+
+.popup.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pages {
+    width: 100%;
+}

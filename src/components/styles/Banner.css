@@ -1,0 +1,8 @@
+.topbar {
+    top: 0;
+    position: absolute;
+}
+
+.topbar>p {
+    color: white
+}

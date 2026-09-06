@@ -1,0 +1,19 @@
+.input {
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 26px;
+    padding: 10px 6px;
+    color: black;
+    font-size: 18px;
+}
+
+.button {
+    padding: 12px 6px;
+    border-radius: 8px;
+    border: none;
+}
+
+.submit {
+    background-color: rgb(78, 161, 78);
+}

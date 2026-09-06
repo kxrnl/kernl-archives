@@ -1,0 +1,47 @@
+.first {
+    height: 42vh;
+    background-image: url("../assets/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first>a>img {
+    width: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+#aboutcenterlabel {
+    font-family: "Barlow Condensed";
+    text-align: center;
+    font-size: 120px;
+    width: 100vw;
+}
+
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.about-block h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.about-block p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
