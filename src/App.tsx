@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+
 // Loader Component
 import Loading from './components/Loading'
 
