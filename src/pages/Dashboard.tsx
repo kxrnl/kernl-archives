@@ -5,18 +5,19 @@ import ImageUploader from '../components/ImageUploader'
 
 import '../styles/Dashboard.css'
 
-type Table = 'games' | 'devlogs'
+type Table = 'projects' | 'devlogs'
 
+// Field config per table — text fields only; image is handled separately via ImageUploader
 const tableConfig = {
-    games: {
-        orderBy: 'gameDate',
-        imageKey: 'gameImage',
+    projects: {
+        orderBy: 'projectDate',
+        imageKey: 'projectImage',
         fields: [
-            { key: 'gameId', label: 'Game ID' },
-            { key: 'gameName', label: 'Game Name' },
-            { key: 'gameDate', label: 'Game Date' },
+            { key: 'projectId', label: 'Project ID' },
+            { key: 'projectName', label: 'Project Name' },
+            { key: 'projectDate', label: 'Project Date' },
         ],
-        displayFields: ['gameName', 'gameDate'],
+        displayFields: ['projectName', 'projectDate'],
     },
     devlogs: {
         orderBy: 'devlogDate',
@@ -32,7 +33,7 @@ const tableConfig = {
 
 function Dashboard() {
     const { session } = useAuth()
-    const [table, setTable] = useState<Table>('games')
+    const [table, setTable] = useState<Table>('projects')
     const [rows, setRows] = useState<any[]>([])
     const [form, setForm] = useState<any>({})
     const [editingId, setEditingId] = useState<string | null>(null)
@@ -98,8 +99,8 @@ function Dashboard() {
         <div className="dashboard-shell">
             <div className="dashboard-header">
                 <legend>{session?.user.email}</legend>
-                <button onClick={() => setTable('games')} disabled={table === 'games'}>
-                    Games
+                <button onClick={() => setTable('projects')} disabled={table === 'projects'}>
+                    Projects
                 </button>
                 <button onClick={() => setTable('devlogs')} disabled={table === 'devlogs'}>
                     Devlogs

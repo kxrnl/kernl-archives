@@ -11,7 +11,7 @@ function Nav() {
 
 
             <div className="pages">
-                <Link to="/games"><span>GAMES</span></Link>
+                <Link to="/projects"><span>PROJECTS</span></Link>
                 <Link to="/devlogs"><span>DEVLOG</span></Link>
                 <Link to="/about"><span>ABOUT</span></Link>
             </div>

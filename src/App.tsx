@@ -5,7 +5,7 @@ import Loading from './components/Loading'
 
 import Home from './pages/Home'
 import About from './pages/About'
-import Games from './pages/Games'
+import Projects from './pages/Projects'
 import Devlogs from './components/Devlogs'
 import NotFound from './pages/NotFound'
 import GamesDevlogsLayout from './layouts/GamesDevlogsLayout'
@@ -45,7 +45,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route element={<GamesDevlogsLayout />}>
-          <Route path="/games" element={<Games />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/devlogs" element={<Devlogs />} />
 
         </Route>
