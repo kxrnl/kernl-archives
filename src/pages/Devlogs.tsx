@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import DevlogCard from './DevlogCard'
+import DevlogCard from '../components/DevlogCard'
 import { supabase } from '../utils/supabase'
 
 interface Devlog {
@@ -20,9 +20,6 @@ function Devlogs() {
                 .from('devlogs')
                 .select('*')
                 .order('devlogDate', { ascending: false })
-
-            console.log('simplified query:', data, error)
-            console.log('fetched games:', data)
 
             if (error) {
                 console.error('Error fetching devlogs:', error.message, error.details, error.hint)
