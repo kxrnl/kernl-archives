@@ -7,52 +7,6 @@ main {
     min-height: 100vh;
 }
 
-.top {
-    display: grid;
-    grid-template-columns: 100px 1fr 100px;
-    align-items: center;
-    padding: 38px 28px;
-}
-
-.logo-top {
-    width: 28px;
-    display: block;
-    transition: all .1s ease-in-out;
-}
-
-.logo-top:hover {
-    transform: scale(1.1);
-}
-
-.top>.pages {
-    justify-content: center;
-    grid-column: 2;
-    display: flex;
-    gap: 22px;
-}
-
-.pages>a {
-    font-family: "Barlow Condensed";
-    color: grey;
-    font-size: 32px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.5s ease;
-    /* smooth press effect */
-    gap: 18px;
-}
-
-.pages>a:hover,
-a:active {
-    color: black;
-}
-
-.inter {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 16px;
-}
-
 .inter>a {
     height: max-content;
     text-decoration: none;

@@ -13,21 +13,21 @@ const tableConfig = {
         orderBy: 'projectDate',
         imageKey: 'projectImage',
         fields: [
-            { key: 'projectId', label: 'Project ID' },
+            { key: 'projectId', label: 'Custom ID' },
             { key: 'projectName', label: 'Project Name' },
             { key: 'projectDate', label: 'Project Date' },
         ],
-        displayFields: ['projectName', 'projectDate'],
+        displayFields: ['id', 'projectId', 'projectName', 'projectDate'],
     },
     devlogs: {
         orderBy: 'devlogDate',
         imageKey: 'devlogImage',
         fields: [
-            { key: 'devlogId', label: 'Devlog ID' },
+            { key: 'devlogId', label: 'Custom ID' },
             { key: 'devlogName', label: 'Devlog Name' },
             { key: 'devlogDate', label: 'Devlog Date' },
         ],
-        displayFields: ['devlogName', 'devlogDate'],
+        displayFields: ['id', 'devlogId', 'devlogName', 'devlogDate'],
     },
 } as const
 
@@ -105,7 +105,7 @@ function Dashboard() {
                 <button onClick={() => setTable('devlogs')} disabled={table === 'devlogs'}>
                     Devlogs
                 </button>
-                <button onClick={handleLogout}>Log out</button>
+                <button className='logout-btn' onClick={handleLogout}>Log out</button>
             </div>
 
             <form onSubmit={handleSubmit} className="dashboard-form">
@@ -135,15 +135,22 @@ function Dashboard() {
 
             <table className="dashboard-table">
                 <tbody>
+                    <th>DB_ID</th>
+                    <th>CustomID</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Actions</th>
                     {rows.map((row) => (
                         <tr key={row.id}>
                             {config.displayFields.map((key) => (
                                 <td key={key}>{row[key]}</td>
                             ))}
                             <td>
-                                <button onClick={() => handleEdit(row)}>Edit</button>
-                                <button onClick={() => handleDelete(row.id)}>Delete</button>
+                                <button className='edit-btn' onClick={() => handleEdit(row)}>Edit</button>
+                                <button className='delete-btn' onClick={() => handleDelete(row.id)}>Delete</button>
                             </td>
+
+
                         </tr>
                     ))}
                 </tbody>

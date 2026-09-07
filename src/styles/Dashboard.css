@@ -1,15 +1,129 @@
 .dashboard-shell {
-    background-color: green;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    background-color: #303030;
+    background-image: url('../assets/bg.png');
+    background-size: cover;
+}
+
+.dashboard-header {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    text-transform: uppercase;
+}
+
+.dashboard-header>legend {
+    color: white;
+    font-style: normal;
+    text-decoration: none;
+    margin-right: auto;
+    font-size: 16px;
 }
 
 .dashboard-header>legend::before {
     content: "Logged in as: ";
+    color: #999;
 }
 
-.dashboard-header>legend {
+.dashboard-header button {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.dashboard-header button:hover {
+    color: white;
+}
+
+.dashboard-header button:disabled {
+    color: white;
+    font-weight: 700;
+    cursor: default;
+}
+
+.dashboard-form {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #faf9f5;
+    border: 1px solid #000000;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dashboard-form input {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    background-color: white;
     color: black;
-    font-style: italic;
-    text-decoration: underline;
+}
+
+.dashboard-form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.dashboard-form-actions button {
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dashboard-table {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    width: 100%;
+}
+
+.dashboard-table tr {
+    background-color: #71b3ff;
+    border: 1px solid #000000;
+}
+
+.dashboard-table td {
+    padding: 14px 16px;
+    color: #333;
+    font-size: 15px;
+}
+
+.dashboard-table button {
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-right: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* BTNS */
+.edit-btn {
+    background-color: rgb(61, 167, 61);
+    border: rgb(0, 0, 0);
+    color: white;
+}
+
+.delete-btn {
+    background-color: red;
+    border: red;
+}
+
+.logout-btn {
+    background-color: red !important;
+    color: white !important;
 }

@@ -6,9 +6,6 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-
-    <noscript>Hello</noscript>
-
     <BrowserRouter>
       <App />
     </BrowserRouter>

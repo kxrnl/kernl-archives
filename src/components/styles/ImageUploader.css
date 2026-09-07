@@ -6,7 +6,6 @@
 
 .image-drop-zone {
     border: 2px dashed #ccc;
-    border-radius: 8px;
     padding: 24px;
     text-align: center;
     cursor: pointer;
@@ -15,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: grey
 }
 
 .image-drop-zone:hover {
@@ -36,11 +36,13 @@
 .image-clear-btn {
     align-self: flex-start;
     background: none;
-    border: 1px solid #ccc;
+    border: 1px solid #ff0000;
     border-radius: 4px;
     padding: 4px 10px;
     cursor: pointer;
     font-size: 13px;
+    color: red;
+    width: 100%;
 }
 
 .image-upload-error {

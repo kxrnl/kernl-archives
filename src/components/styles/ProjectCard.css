@@ -1,15 +1,19 @@
 .card {
-    background-color: #FAF9F6;
+    /* background-color: #FAF9F6; */
     min-width: 200px;
     min-height: 300px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
     border: 1px solid black;
-    padding: 20px;
+    /* padding: 20px; */
     height: fit-content;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
 
-.gameimg {
+.projectimg {
     width: 100%;
     width: 100%;
     object-fit: cover;

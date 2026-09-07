@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
 
@@ -28,8 +28,10 @@ body {
 
 .home-holder {
     height: 100%;
+    width: 100%;
     display: grid;
     align-content: center;
+    position: absolute;
 }
 
 .center {

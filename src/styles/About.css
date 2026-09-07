@@ -1,0 +1,102 @@
+.first {
+    height: 42vh;
+    background-image: url("../assets/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first>img {
+    width: 350px;
+    position: relative;
+    z-index: 1;
+}
+
+#aboutcenterlabel {
+    font-family: "Barlow Condensed";
+    text-align: center;
+    font-size: 90px;
+    width: 100vw;
+    color: black;
+}
+
+#aboutcenterlabel::after {
+    content: "_";
+    margin-left: 10px;
+    animation: textCursor 1s step-end infinite;
+}
+
+@keyframes textCursor {
+    0% {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 0%
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.about-block h2 {
+    color: black;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.about-block p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.equipment-category>.sub-p {
+    color: grey;
+}
+
+.equipment-category>.sub-p::before {
+    content: "+";
+    margin-right: 6px;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.equipment-category h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.equipment-category p {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
+}
