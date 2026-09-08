@@ -12,6 +12,14 @@ import NotFound from './pages/NotFound'
 import GamesDevlogsLayout from './layouts/GamesDevlogsLayout'
 import AboutLayout from './layouts/AboutLayout'
 
+// View overlays
+// import { CardOverlay } from './utils/ProjectOverlay'
+import { ProjectCardOverlay } from './components/ProjectsCardOverlay'
+import { DevlogCardOverlay } from './components/DevlogCardOverlay'
+
+// Test
+import Test from './pages/Test'
+
 // Yes me
 import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './pages/Dashboard'
@@ -22,6 +30,9 @@ import './App.css'
 function App() {
   // Loading sthing
   const location = useLocation()
+
+  const background = location.state?.background
+
   const [loading, setLoading] = useState(false)
   const [fading, setFading] = useState(false)
 
@@ -38,6 +49,8 @@ function App() {
     }
   }, [location.pathname])
 
+  // Overlay Handler
+
   return (
     <>
       {loading && <Loading fading={fading} />}
@@ -48,8 +61,15 @@ function App() {
         <Route element={<GamesDevlogsLayout />}>
           <Route path="/projects" element={<Projects />} />
           <Route path="/devlogs" element={<Devlogs />} />
-
         </Route>
+
+        {/* Cards view */}
+        {background && (
+          <Routes>
+            <Route path="/projects/view/:id" element={<ProjectCardOverlay />} />
+            <Route path="/devlogs/view/:id" element={<DevlogCardOverlay />} />
+          </Routes>
+        )}
 
         <Route element={<AboutLayout />}>
           <Route path="/about" element={<About />} />
@@ -64,6 +84,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+
+
+        {/* Test page ;-; just a quick one not a formal like test page */}
+        <Route path="/test" element={<Test />}></Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>

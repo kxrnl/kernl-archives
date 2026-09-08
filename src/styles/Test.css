@@ -1,0 +1,9 @@
+.markdown {
+    color: black
+}
+
+blockquote {
+    background-color: rgb(142 222 229 / 59%);
+    border-left: 4px solid rgb(94 133 137);
+    padding-left: 4px;
+}

@@ -22,6 +22,8 @@ Backend: [Supabase](https://supabase.com)
 - [x] Dashboard for managing Projects and Devlogs
 - [x] Admin Login on (/login)
 - [ ] Viewing more detail on each card
+- [ ] Markdown support for viewing cards
+- [ ] Card routes
 
 ## AI Usage
 
