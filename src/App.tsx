@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 // Loader Component
 import Loading from './components/Loading'
@@ -13,7 +13,6 @@ import GamesDevlogsLayout from './layouts/GamesDevlogsLayout'
 import AboutLayout from './layouts/AboutLayout'
 
 // View overlays
-// import { CardOverlay } from './utils/ProjectOverlay'
 import { ProjectCardOverlay } from './components/ProjectsCardOverlay'
 import { DevlogCardOverlay } from './components/DevlogCardOverlay'
 
@@ -28,48 +27,49 @@ import Login from './pages/Login'
 import './App.css'
 
 function App() {
-  // Loading sthing
   const location = useLocation()
-
   const background = location.state?.background
 
   const [loading, setLoading] = useState(false)
   const [fading, setFading] = useState(false)
 
+  const wasOverlayRef = useRef(false)
+
   useEffect(() => {
+    const isOverlay = Boolean(background)
+    const wasOverlay = wasOverlayRef.current
+    wasOverlayRef.current = isOverlay
+
+    // Skip the loading transition when entering OR exiting an overlay —
+    // only trigger it for genuine page-to-page navigation
+    if (isOverlay || wasOverlay) return
+
     setLoading(true)
     setFading(false)
 
-    const fadeTimer = setTimeout(() => setFading(true), 1500)  // Timer
-    const hideTimer = setTimeout(() => setLoading(false), 2000) // Actual Fade
+    const fadeTimer = setTimeout(() => setFading(true), 1500)
+    const hideTimer = setTimeout(() => setLoading(false), 2000)
 
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(hideTimer)
     }
-  }, [location.pathname])
-
-  // Overlay Handler
+  }, [location.pathname, background])
 
   return (
     <>
       {loading && <Loading fading={fading} />}
 
-      <Routes>
+      <Routes location={background || location}>
         <Route path="/" element={<Home />} />
 
         <Route element={<GamesDevlogsLayout />}>
           <Route path="/projects" element={<Projects />} />
           <Route path="/devlogs" element={<Devlogs />} />
+          {/* Direct visits/refreshes to a view URL (no background) fall back to the grid page */}
+          <Route path="/projects/view/:id" element={<Projects />} />
+          <Route path="/devlogs/view/:id" element={<Devlogs />} />
         </Route>
-
-        {/* Cards view */}
-        {background && (
-          <Routes>
-            <Route path="/projects/view/:id" element={<ProjectCardOverlay />} />
-            <Route path="/devlogs/view/:id" element={<DevlogCardOverlay />} />
-          </Routes>
-        )}
 
         <Route element={<AboutLayout />}>
           <Route path="/about" element={<About />} />
@@ -85,15 +85,19 @@ function App() {
           }
         />
 
-
-
-        {/* Test page ;-; just a quick one not a formal like test page */}
-        <Route path="/test" element={<Test />}></Route>
+        <Route path="/test" element={<Test />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
 
+      {/* OVERLAY routes */}
+      {background && (
+        <Routes>
+          <Route path="/projects/view/:id" element={<ProjectCardOverlay />} />
+          <Route path="/devlogs/view/:id" element={<DevlogCardOverlay />} />
+        </Routes>
+      )}
+    </>
   )
 }
 

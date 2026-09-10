@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import Banner from '../components/Banner'
 import ProjectCard from '../components/ProjectCard'
 import { supabase } from '../utils/supabase'
@@ -14,6 +15,7 @@ interface Project {
 }
 
 function Projects() {
+    const location = useLocation()
     const [projects, setProjects] = useState<Project[]>([])
     const [loading, setLoading] = useState(true)
 
@@ -46,13 +48,19 @@ function Projects() {
                             <p style={{ color: 'black' }}>Loading projects...</p>
                         ) : (
                             projects.map((project) => (
-                                <ProjectCard
+                                <Link
                                     key={project.id}
-                                    projectId={project.projectId}
-                                    projectName={project.projectName}
-                                    projectDate={project.projectDate}
-                                    projectImage={project.projectImage}
-                                />
+                                    to={`/projects/view/${project.id}`}
+                                    state={{ background: location }}
+                                    className='project-card'
+                                >
+                                    <ProjectCard
+                                        projectId={project.projectId}
+                                        projectName={project.projectName}
+                                        projectDate={project.projectDate}
+                                        projectImage={project.projectImage}
+                                    />
+                                </Link>
                             ))
                         )}
                     </div>
