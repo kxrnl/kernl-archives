@@ -1,3 +1,7 @@
+:root {
+    --secondary-color: grey;
+}
+
 .card {
     /* background-color: #FAF9F6; */
     min-width: 200px;

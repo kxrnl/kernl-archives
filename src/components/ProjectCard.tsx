@@ -5,11 +5,15 @@ interface ProjectCardProps {
     projectName: string
     projectDate: string
     projectImage: string | null
+    display_order?: number
+    top_project?: boolean
 }
 
-function ProjectCard({ projectName, projectDate, projectImage }: ProjectCardProps) {
+function ProjectCard({ projectName, projectDate, projectImage, top_project }: ProjectCardProps) {
     return (
-        <div className="card">
+        <div className={`card ${top_project ? 'card--top' : ''}`}>
+            {top_project && <span className="card-badge">Featured</span>}
+
             {projectImage ? (
                 <img className="projectimg" src={projectImage} alt={projectName} />
             ) : (

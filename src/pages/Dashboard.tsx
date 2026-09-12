@@ -118,6 +118,22 @@ function Dashboard() {
                     />
                 ))}
 
+                <input
+                    type="number"
+                    placeholder="Display Order"
+                    value={form.display_order ?? ''}
+                    onChange={(e) => setForm({ ...form, display_order: Number(e.target.value) })}
+                />
+
+                <label className="dashboard-checkbox-label">
+                    <input
+                        type="checkbox"
+                        checked={form.top_project || false}
+                        onChange={(e) => setForm({ ...form, top_project: e.target.checked })}
+                    />
+                    Top project
+                </label>
+
                 <ImageUploader
                     value={form[config.imageKey] || ''}
                     onChange={(url) => setForm({ ...form, [config.imageKey]: url })}

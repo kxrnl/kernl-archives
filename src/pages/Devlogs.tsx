@@ -39,7 +39,7 @@ function Devlogs() {
 
                 <div className="display">
                     <div className="grid">
-                        <h1 style={{ color: "black", lineHeight: ".8" }}>We are still gathering up devlogs...</h1>
+                        <h1 style={{ color: "black", lineHeight: ".8" }}>We are still gathering up devlogs...<p style={{ color: "grey", fontSize: 32, marginTop: 12 }}>Coming soon (⌐■_■)</p></h1>
 
                         {loading ? (
                             <p>Loading devlogs...</p>

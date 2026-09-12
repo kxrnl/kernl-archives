@@ -12,6 +12,8 @@ interface Project {
     projectName: string
     projectDate: string
     projectImage: string | null
+    display_order: number
+    top_project: boolean
 }
 
 function Projects() {
@@ -24,7 +26,7 @@ function Projects() {
             const { data, error } = await supabase
                 .from('projects')
                 .select('*')
-                .order('projectDate', { ascending: false })
+                .order('display_order', { ascending: true })
 
             if (error) {
                 console.error('Error fetching projects:', error.message, error.details, error.hint)
@@ -52,13 +54,14 @@ function Projects() {
                                     key={project.id}
                                     to={`/projects/view/${project.id}`}
                                     state={{ background: location }}
-                                    className='project-card'
                                 >
                                     <ProjectCard
                                         projectId={project.projectId}
                                         projectName={project.projectName}
                                         projectDate={project.projectDate}
                                         projectImage={project.projectImage}
+                                        display_order={project.display_order}
+                                        top_project={project.top_project}
                                     />
                                 </Link>
                             ))
