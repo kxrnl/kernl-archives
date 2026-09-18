@@ -31,10 +31,9 @@ This project has been a fun one to do since it's my first time using React.js to
 - [x] Images on each card
 - [x] Dashboard for managing Projects and Devlogs
 - [x] Admin Login on (/login)
-- [ ] Viewing more detail on each card
+- [x] Viewing more detail on each card
+- [x] Card routes (still working on it & gathering devlogs)
 - [ ] Markdown support for viewing cards
-- [ ] Card routes (still working on it & gathering devlogs)
-
 
 ## Technologies
 
