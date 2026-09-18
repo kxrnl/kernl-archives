@@ -1,0 +1,72 @@
+@import url('./Global_Components.css');
+
+#project-details {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 12px;
+}
+
+#info-holder {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-overlay-img {
+    width: 200px;
+    grid-row: 1 / 3;
+    /* span both rows so it sits next to both title and date */
+}
+
+#project-title,
+#project-date {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+}
+
+#project-description {
+    margin-top: 4px;
+    ;
+    color: grey
+}
+
+#project-badges {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    bottom: 0;
+}
+
+.badge {
+    padding: 2px 6px;
+    background-color: var(--base-badge-color);
+    color: white;
+    width: max-content;
+    height: fit-content;
+}
+
+#buttons-holder {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    gap: 6px;
+    height: fit-content;
+}
+
+.project-buttons {
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 12px;
+
+    text-decoration: none;
+}
+
+.github {
+    background-color: rgb(24, 39, 59);
+    color: white;
+}
+
+.demo {
+    background-color: rgb(24, 85, 48);
+    color: white;
+}

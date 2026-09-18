@@ -10,6 +10,7 @@ interface Project {
     id: number
     projectId: string
     projectName: string
+    projectDescription: string
     projectDate: string
     projectImage: string | null
     display_order: number
@@ -54,6 +55,8 @@ function Projects() {
                                     key={project.id}
                                     to={`/projects/view/${project.id}`}
                                     state={{ background: location }}
+                                    className='project-card'
+
                                 >
                                     <ProjectCard
                                         projectId={project.projectId}

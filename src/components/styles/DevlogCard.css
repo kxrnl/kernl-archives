@@ -19,7 +19,6 @@
 
 .card-content {
     padding: 15px;
-    /* this is your (PADDING) between image and text */
     display: flex;
     flex-direction: column;
     gap: 5px;

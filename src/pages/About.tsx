@@ -66,6 +66,10 @@ function About() {
                                 <h3>Cisco</h3>
                                 <p>Introduction to Cybersecurity</p>
                             </div>
+                            <div className="equipment-category">
+                                <h3>Stardance</h3>
+                                <p>Hack Club Stardance Challenge</p>
+                            </div>
                         </div>
                     </div>
 

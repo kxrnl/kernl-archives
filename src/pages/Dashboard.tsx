@@ -14,10 +14,15 @@ const tableConfig = {
         imageKey: 'projectImage',
         fields: [
             { key: 'projectId', label: 'Custom ID' },
+            // { key: 'display_order', label: 'Display Order' },
             { key: 'projectName', label: 'Project Name' },
             { key: 'projectDate', label: 'Project Date' },
+            { key: 'project_description', label: 'Description' },
+            { key: 'github_link', label: 'Repo Link' },
+            { key: 'demo_link', label: 'Demo Link' },
+
         ],
-        displayFields: ['id', 'projectId', 'projectName', 'projectDate'],
+        displayFields: ['id', 'projectId', 'display_order', 'projectName', 'projectDate', 'project_description', 'github_link', 'demo_link'],
     },
     devlogs: {
         orderBy: 'devlogDate',
@@ -109,6 +114,14 @@ function Dashboard() {
             </div>
 
             <form onSubmit={handleSubmit} className="dashboard-form">
+                {/* Display order */}
+                <input
+                    type="number"
+                    placeholder="Display Order"
+                    value={form.display_order ?? ''}
+                    onChange={(e) => setForm({ ...form, display_order: Number(e.target.value) })}
+                />
+
                 {config.fields.map((field) => (
                     <input
                         key={field.key}
@@ -117,13 +130,6 @@ function Dashboard() {
                         onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                     />
                 ))}
-
-                <input
-                    type="number"
-                    placeholder="Display Order"
-                    value={form.display_order ?? ''}
-                    onChange={(e) => setForm({ ...form, display_order: Number(e.target.value) })}
-                />
 
                 <label className="dashboard-checkbox-label">
                     <input

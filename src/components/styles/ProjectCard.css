@@ -1,3 +1,5 @@
+@import url('./Global_Components.css');
+
 :root {
     --secondary-color: grey;
 }
@@ -12,9 +14,9 @@
     /* padding: 20px; */
     height: fit-content;
     height: 100%;
-
+    align-content: start;
     display: grid;
-    grid-template-rows: 1fr auto;
+    /* grid-template-rows: 1fr auto; */
 }
 
 .projectimg {
@@ -44,6 +46,16 @@
     flex-direction: column;
     gap: 5px;
     align-items: start;
+}
+
+.card-badge::before {
+    content: "";
+}
+
+.card-badge {
+    background-color: var(--base-badge-color);
+    color: white;
+    padding: 0px 6px;
 }
 
 .gameimg-placeholder {
