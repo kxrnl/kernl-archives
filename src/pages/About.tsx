@@ -2,7 +2,7 @@ import '../styles/About.css'
 
 import logo from '../assets/logo-white-transparent.png'
 
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 
 function About() {
     return (

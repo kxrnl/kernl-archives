@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo-white-transparent.png'
-import bg from '../assets/bg.png'
+// import bg from '../assets/bg.png'
 
 import '../styles/Global.css'
 import '../styles/Home.css'
