@@ -69,7 +69,7 @@ a:active {
     .top {
         grid-template-columns: auto 1fr;
         padding: 16px;
-        margin-top: 36px;
+        /* margin-top: 36px; */
     }
 
     .top>.pages {

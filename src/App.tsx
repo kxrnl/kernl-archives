@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react'
 // Loader Component
 import Loading from './components/Loading'
 
+import Footer from './components/Footer'
+
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -37,8 +39,6 @@ function App() {
     const wasOverlay = wasOverlayRef.current
     wasOverlayRef.current = isOverlay
 
-    // Skip the loading transition when entering OR exiting an overlay —
-    // only trigger it for genuine page-to-page navigation
     if (isOverlay || wasOverlay) return
 
     setLoading(true)
@@ -94,6 +94,8 @@ function App() {
           <Route path="/devlogs/view/:id" element={<DevlogCardOverlay />} />
         </Routes>
       )}
+
+      <Footer />
     </>
   )
 }

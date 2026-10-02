@@ -6,6 +6,20 @@ footer {
     height: fit-content;
 }
 
+#footer-icon {
+    width: 64px;
+    grid-row: span 2;
+    border: 6px solid white;
+    border-radius: 8px;
+}
+
+#footer-hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    align-items: center;
+}
+
 #p {
     color: grey;
     margin-top: 16px;
@@ -30,8 +44,12 @@ footer {
     margin-right: 18px;
 }
 
-#quick-links-label {
+.footer-label {
     border-bottom: 1px solid white;
+}
+
+a {
+    color: grey
 }
 
 @media screen and (max-width: 600px) {

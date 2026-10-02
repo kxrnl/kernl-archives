@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import Banner from '../components/Banner'
+// import Banner from '../components/Banner'
 import ProjectCard from '../components/ProjectCard'
 import { supabase } from '../utils/supabase'
 
@@ -42,7 +42,6 @@ function Projects() {
 
     return (
         <>
-            <Banner />
             <main>
                 <div className="sub-top">PROJECTS</div>
                 <div className="display">
