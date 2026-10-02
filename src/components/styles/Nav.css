@@ -46,14 +46,12 @@
 }
 
 .pages>a {
-    font-family: "Barlow Condensed";
+    font-family: "Barlow Condensed", sans-serif;
     color: grey;
     font-size: 32px;
     font-weight: bold;
     text-decoration: none;
-    transition: all 0.5s ease;
-    /* smooth press effect */
-    gap: 18px;
+    transition: color 0.5s ease;
 }
 
 .pages>a:hover,
@@ -65,4 +63,20 @@ a:active {
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .top {
+        grid-template-columns: auto 1fr;
+        padding: 16px;
+        margin-top: 36px;
+    }
+
+    .top>.pages {
+        gap: 12px;
+    }
+
+    .pages>a {
+        font-size: 20px;
+    }
 }

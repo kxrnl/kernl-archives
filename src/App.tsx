@@ -16,9 +16,6 @@ import AboutLayout from './layouts/AboutLayout'
 import { ProjectCardOverlay } from './components/ProjectsCardOverlay'
 import { DevlogCardOverlay } from './components/DevlogCardOverlay'
 
-// Test
-import Test from './pages/Test'
-
 // Yes me
 import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './pages/Dashboard'
@@ -66,9 +63,10 @@ function App() {
         <Route element={<GamesDevlogsLayout />}>
           <Route path="/projects" element={<Projects />} />
           <Route path="/devlogs" element={<Devlogs />} />
-          {/* Direct visits/refreshes to a view URL (no background) fall back to the grid page */}
-          <Route path="/projects/view/:id" element={<Projects />} />
+          <Route path="/devlogs/:projectId" element={<Devlogs />} />
           <Route path="/devlogs/view/:id" element={<Devlogs />} />
+
+          <Route path="/projects/view/:id" element={<Projects />} />
         </Route>
 
         <Route element={<AboutLayout />}>
@@ -85,8 +83,6 @@ function App() {
           }
         />
 
-        <Route path="/test" element={<Test />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
 
@@ -94,6 +90,7 @@ function App() {
       {background && (
         <Routes>
           <Route path="/projects/view/:id" element={<ProjectCardOverlay />} />
+          <Route path="/devlogs/:projectId" element={<DevlogCardOverlay />} />
           <Route path="/devlogs/view/:id" element={<DevlogCardOverlay />} />
         </Routes>
       )}

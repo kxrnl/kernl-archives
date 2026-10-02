@@ -5,9 +5,18 @@ import './styles/ImageUploader.css'
 interface ImageUploaderProps {
     value: string
     onChange: (url: string) => void
+    namePrefix?: string // ← add this line
 }
 
-function ImageUploader({ value, onChange }: ImageUploaderProps) {
+function slugify(input: string): string {
+    return input
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+}
+
+function ImageUploader({ value, onChange, namePrefix }: ImageUploaderProps) {
     const [dragging, setDragging] = useState(false)
     const [uploading, setUploading] = useState(false)
     const [error, setError] = useState('')
@@ -18,7 +27,11 @@ function ImageUploader({ value, onChange }: ImageUploaderProps) {
         setError('')
 
         const fileExt = file.name.split('.').pop()
-        const fileName = `${crypto.randomUUID()}.${fileExt}`
+        const slug = namePrefix ? slugify(namePrefix) : ''
+        const uniqueSuffix = Date.now()
+        const fileName = slug
+            ? `${slug}-${uniqueSuffix}.${fileExt}`
+            : `${crypto.randomUUID()}.${fileExt}`
 
         const { error: uploadError } = await supabase.storage
             .from('Images')

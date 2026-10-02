@@ -2,6 +2,8 @@ import '../styles/About.css'
 
 import logo from '../assets/logo-white-transparent.png'
 
+import Footer from '../components/Footer';
+
 function About() {
     return (
         <>
@@ -117,6 +119,8 @@ function About() {
                     </div>
                 </section>
             </div>
+
+            <Footer />
         </>
     )
 }

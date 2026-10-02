@@ -1,28 +1,46 @@
 main {
-    padding: 0px 22px;
+    padding: 0 22px;
 }
 
 .games-devlogs-shell {
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .inter>a {
-    height: max-content;
     text-decoration: none;
 }
 
 .display {
     flex: 1 1 auto;
-    min-height: 0;
-    padding: 48px 0px;
+    padding: 48px 0;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 300px));
     justify-content: center;
     gap: 16px;
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .sub-top {
+        margin-top: 0;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .display {
+        padding-top: 12px;
+    }
+
+    main {
+        padding: 0px 16px;
+    }
 }

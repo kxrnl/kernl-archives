@@ -100,3 +100,9 @@
     color: #333;
     line-height: 1.5;
 }
+
+@media screen and (max-width: 600px) {
+    #aboutcenterlabel {
+        font-size: 64px;
+    }
+}

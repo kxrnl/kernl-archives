@@ -15,10 +15,16 @@ body {
 }
 
 .bg {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    position: fixed;
+    top: -40px;
+    left: -40px;
+    width: calc(100% + 80px);
+    height: calc(100% + 80px);
     z-index: 0;
+    background-image: url('../assets/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .logo {

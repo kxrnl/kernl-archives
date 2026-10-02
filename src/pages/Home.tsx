@@ -9,8 +9,8 @@ function Home() {
     return (
         <>
             <h1 style={{ display: "none" }}>HOME</h1>
-            <img className='bg' src={bg}></img>
-
+            <img className='bg'></img>
+            {/* src={bg} */}
             <div className='home-holder'>
                 <section className="center">
                     <div>

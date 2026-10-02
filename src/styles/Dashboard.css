@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 100vh;
     background-color: #303030;
-    background-image: url('../assets/bg.png');
+    /* background-image: url('../assets/bg.png'); */
     background-size: cover;
 }
 
@@ -112,6 +112,10 @@
 }
 
 /* BTNS */
+.dashboard-checkbox-label {
+    color: black
+}
+
 .edit-btn {
     background-color: rgb(61, 167, 61);
     border: rgb(0, 0, 0);

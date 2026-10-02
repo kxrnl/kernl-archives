@@ -1,0 +1,92 @@
+.overlay-card {
+    width: 100%;
+
+}
+
+.devlog-split {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+.devlog-split-list {
+    padding: 8px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.devlog-split-heading {
+    margin: 0;
+}
+
+.devlog-split-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 10px;
+
+    border: 1px solid black;
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+    height: 32px;
+}
+
+.active {
+    background-color: rgb(179, 179, 179);
+}
+
+.devlog-split-item-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.devlog-split-item-date {
+    color: grey;
+    font-style: italic;
+}
+
+
+/* Right side */
+.devlog-split-detail {
+    /* background-color: rgb(167, 167, 167); */
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 8px;
+}
+
+.devlog-split-detail-heading {
+    border-bottom: 1px solid black;
+}
+
+#project-description {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+#project-description>ul {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .devlog-split-item {
+        height: max-content;
+    }
+
+    .devlog-split-item-name {
+        font-size: 12px;
+        height: fit-content;
+        width: 100%;
+    }
+
+    .devlog-split-item-date {
+        text-align: right;
+        font-size: 10px;
+        line-break: auto;
+    }
+}

@@ -1,3 +1,5 @@
+// Thanks Claude
+
 type Block =
     | { type: "heading"; level: number; content: string }
     | { type: "p"; content: string }
