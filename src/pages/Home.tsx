@@ -19,7 +19,7 @@ function Home() {
 
                     <div className="center-menu">
                         <Link to="/projects">
-                            <p>games</p>
+                            <p>projects</p>
                         </Link>
                         <Link to="/devlogs">
                             <p>devlogs</p>

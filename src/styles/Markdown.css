@@ -2,6 +2,22 @@
     padding: 20px;
 }
 
+textarea {
+    width: 100%;
+}
+
+.preview-label {
+    color: white;
+    background-color: black;
+    padding: 6px;
+}
+
+.markdown {
+    color: black;
+    border: 1px solid black;
+    padding: 12px;
+}
+
 blockquote {
     margin: 0;
 }
