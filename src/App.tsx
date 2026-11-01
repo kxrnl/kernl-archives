@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 // Loader Component
 import Loading from './components/Loading'
 
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 
 import Home from './pages/Home'
 import About from './pages/About'
