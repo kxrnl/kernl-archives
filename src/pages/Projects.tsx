@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 // import Banner from '../components/Banner'
 import ProjectCard from '../components/ProjectCard'
 import { supabase } from '../utils/supabase'
+import Footer from '../components/Footer'
 
 import '../styles/Projects.css'
 
@@ -71,6 +72,8 @@ function Projects() {
                     </div>
                 </div>
             </main>
+
+            <Footer />
         </>
     )
 }

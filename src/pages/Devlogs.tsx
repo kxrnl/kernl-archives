@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 // import Banner from '../components/Banner'
+import Footer from '../components/Footer'
 import { supabase } from '../utils/supabase'
 
 import '../styles/Projects.css'
@@ -97,6 +98,8 @@ function Devlogs() {
                     </div>
                 </div>
             </main>
+
+            <Footer />
         </>
     )
 }

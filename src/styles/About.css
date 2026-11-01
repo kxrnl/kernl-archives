@@ -69,6 +69,25 @@
     color: #333;
 }
 
+.certs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: black
+}
+
+.certs li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 16px;
+}
+
+.cert_meta {
+    opacity: 0.7;
+}
+
 .equipment-category>.sub-p {
     color: grey;
 }
@@ -85,7 +104,6 @@
 }
 
 .equipment-category h3 {
-    font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -95,10 +113,20 @@
 }
 
 .equipment-category p {
-    font-family: "Inter", sans-serif;
     font-size: 15px;
     color: #333;
     line-height: 1.5;
+}
+
+.equipment-category a {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    color: #333;
+    text-underline-offset: 3px;
+}
+
+.equipment-category a:hover {
+    color: #000;
 }
 
 @media screen and (max-width: 600px) {
